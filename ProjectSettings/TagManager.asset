@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Laser
+  - KillPlane
+  - Tiles
+  - PlayerBoundary
+  - CamBounds
+  - PlayerObject
+  - Mouse
+  - EnemyMouseTarget
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PostProcessing
+  - Tiles
+  - Player
+  - EnemyLaser
+  - Enemies
+  - Boundaries
+  - ReflectedLaser
+  - Trigger
+  - Virtual Screen
+  - Mouse
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 1433492953
+    locked: 0
+  - name: Midground
+    uniqueID: 785127265
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Enemies
+    uniqueID: 1503232605
+    locked: 0
+  - name: Player
+    uniqueID: 3928753817
+    locked: 0
+  - name: Foreground
+    uniqueID: 4041231949
+    locked: 0
+  - name: UI
+    uniqueID: 3924013093
+    locked: 0
