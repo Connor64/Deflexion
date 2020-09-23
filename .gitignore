@@ -24,7 +24,6 @@ sysinfo.txt
 /*.suo
 /*.sln*
 /*.user
-/*.unityproj
 /*.booproj
 .consulo/
 /*.tmp

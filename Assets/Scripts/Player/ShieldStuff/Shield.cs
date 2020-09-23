@@ -16,7 +16,8 @@ public class Shield : MonoBehaviour {
     private Vector3 origin = new Vector3(0, 0, 0);
     private float thumbstickAngle;
     public GameObject player;
-    
+
+    public GameObject playerBlast;
     private int lasersAbsorbed;
     // Only if the shield is an absorber shield
 
@@ -37,7 +38,7 @@ public class Shield : MonoBehaviour {
         mousePosition = origin;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
-        switch(shieldType) {
+        switch (shieldType) {
             case ShieldType.Deflector:
                 spriteRenderer.sprite = deflectorSprite;
                 break;
@@ -60,6 +61,11 @@ public class Shield : MonoBehaviour {
                 if (!enemyLockOn) {
                     lookAt(Input.mousePosition);
                     // use the mouse to rotate the shield around the player
+                }
+            }
+            if (shieldType == ShieldType.Absorber) {
+                if (Input.GetMouseButtonDown(0)) {
+
                 }
             }
         }
@@ -173,6 +179,13 @@ public class Shield : MonoBehaviour {
 
     }
 
+    void shotgunBlast() {
+        Quaternion currentRot = transform.rotation;
+        for (int i = 0; i < lasersAbsorbed; i++) {
+            var blast = Instantiate(playerBlast).GetComponent<PlayerBlast>();
+            blast.Initialize(Quaternion.Euler(0, 0, currentRot.eulerAngles.z + 180), transform.position + (new Vector3(0, 1, 0)));
+        }
+    }
     public void absorbLaser() {
         lasersAbsorbed++;
         spriteRenderer.sprite = absorberSprites[lasersAbsorbed];

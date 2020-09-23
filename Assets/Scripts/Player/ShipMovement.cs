@@ -84,117 +84,7 @@ public class ShipMovement : MonoBehaviour {
             }
         }
     }
-    //public void movement() {
-    //    if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.Space) && !frontCollision && !frontTileLock) {
-    //        if (bottomTileLock) {
-    //            bottomTileLock = false;
-    //        }
-    //        if (transform.position.y > 0.0f) {
-    //            if (transform.position.y < 9.0f) {
-    //                // if the ship is not outside of the max screen area
-    //                position = new Vector3(0, 1, 0);
-    //                transform.position = transform.position + (position * flySpeed * Time.deltaTime);
-    //                // move up
-    //            }
-    //        } else {
-    //            position = new Vector3(0, 1, 0);
-    //            transform.position = transform.position + (position * flySpeed * Time.deltaTime);
-    //            // move up
-    //        }
-    //        if (backgrounds.GetComponent<ParallaxScroll>().parallaxScrollSpeed > backgrounds.GetComponent<ParallaxScroll>().baseSpeed) {
-    //            backgrounds.GetComponent<ParallaxScroll>().slowDown = true;
-    //            // if W is pressed, space is not, and the parallax scroll speed is greater than the base speed, slow it down
-    //        } else {
-    //            backgrounds.GetComponent<ParallaxScroll>().slowDown = false;
-    //        }
-    //    }
-    //    if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && !leftCollision && !leftTileLock) {
-    //        if (rightTileLock) {
-    //            rightTileLock = false;
-    //        }
-    //        if (transform.position.x < 0.0f) {
-    //            // if in the left half of the screen
-    //            if (transform.position.x > -16.0f) {
-    //                // if the ship is not outside of the max screen area
-    //                if (boosting) {
-    //                    position = new Vector3(-1, 0, 0);
-    //                    transform.position = transform.position + (position * (flySpeed / 3) * Time.deltaTime);
-    //                    // move left slowly
-    //                } else {
-    //                    position = new Vector3(-1, 0, 0);
-    //                    transform.position = transform.position + (position * flySpeed * Time.deltaTime);
-    //                    // move left
-    //                }
-    //            }
-    //        } else {
-    //            // if not in the left half of the screen (because there's no need to worry about the player going out of bounds if they're pressing left on the right side of the screen)
-    //            if (boosting) {
-    //                position = new Vector3(-1, 0, 0);
-    //                transform.position = transform.position + (position * (flySpeed / 3) * Time.deltaTime);
-    //                // move left slowly
-    //            } else {
-    //                position = new Vector3(-1, 0, 0);
-    //                transform.position = transform.position + (position * flySpeed * Time.deltaTime);
-    //                // move left
-    //            }
-    //        }
-    //    }
-    //    if (Input.GetKey(KeyCode.S) && !bottomCollision && !boosting && !bottomTileLock) {
-    //        if (frontTileLock) {
-    //            frontTileLock = false;
-    //        }
-    //        if (transform.position.y < 0.0f) {
-    //            // if in the bottom half of the screen
-    //            if (transform.position.y > -9.0f) {
-    //                // if the ship is not outside of the max screen area
-    //                position = new Vector3(0, -1, 0);
-    //                transform.position = transform.position + (position * flySpeed * Time.deltaTime);
-    //                // move down
-    //            }
-    //        } else {
-    //            // if not in the bottom half of the screen
-    //            position = new Vector3(0, -1, 0);
-    //            transform.position = transform.position + (position * flySpeed * Time.deltaTime);
-    //            // move down
-    //        }
-    //    }
-    //    if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A) && !rightCollision && !rightTileLock) {
-    //        if (leftTileLock) {
-    //            leftTileLock = false;
-    //        }
-    //        if (transform.position.x > 0.0f) {
-    //            // if in the right half of the screen
-    //            if (transform.position.x < 16.0f) {
-    //                // if the ship is not outside of the max screen area
-    //                if (boosting) {
-    //                    position = new Vector3(1, 0, 0);
-    //                    transform.position = transform.position + (position * (flySpeed / 3) * Time.deltaTime);
-    //                    // move right slowly
-    //                } else {
-    //                    position = new Vector3(1, 0, 0);
-    //                    transform.position = transform.position + (position * flySpeed * Time.deltaTime);
-    //                    // move right
-    //                }
-    //            }
-    //        } else {
-    //            if (boosting) {
-    //                position = new Vector3(1, 0, 0);
-    //                transform.position = transform.position + (position * (flySpeed / 3) * Time.deltaTime);
-    //                // move right slowly
-    //            } else {
-    //                position = new Vector3(1, 0, 0);
-    //                transform.position = transform.position + (position * flySpeed * Time.deltaTime);
-    //                // move right
-    //            }
-    //        }
-    //    }
-    //    if (!(transform.position.y > -9.0f) && boosting) {
-    //        // if the ship is at the edge of the bottom of the screen and is boosting (basically it takes the player's position and assumes its lower than it actually is by 0.3 units and then checks if that is in the screen safe area)
-    //        backgrounds.GetComponent<ParallaxScroll>().speedUp = false;
-    //        backgrounds.GetComponent<ParallaxScroll>().slowDown = true;
-    //        // disable boosting
-    //    }
-    //}
+
     public void slowMotion() {
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift) && ParallaxScroll.instance.parallaxScrollSpeed == 1) {
             ParallaxScroll.instance.slowDown = true;
@@ -214,6 +104,7 @@ public class ShipMovement : MonoBehaviour {
             }
         }
     }
+
     public void playerBoost() {
         if (!Input.GetKey(KeyCode.Space)) {
             boostLock = false;
